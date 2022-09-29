@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link rel="icon" href="https://blogger.googleusercontent.com/img/a/AVvXsEjh8Tr070h1qgnuJlwRn0qNg6bI0Q0br9NtrxCCS8Qq5cEPk9kcVo2vb2xd2-3K4U0PlCLCigTQr5clVb5UPPKSUBv3RKivnL0OYbeJUrWPYmI7caGCJV8CUTrgTn9q6IAmWh-9IcoJYSXZDjDFlqeVl-6fYQJH5zIHbIt4hCdlzwVCLZm53Eb6jPsc=s206">
+      <title>Readime Clock - Own Your Time</title>
+
+      <style>
+            body{
+                  background-color: #7711f8;
+            }
+
+            .logo{
+                  color: #7711f8;
+            }
+
+            #browse{
+                  background-color: #7711f8;
+            }
+
+            .jumbotron{
+                  background-color: #d9d5de;
+            }
+
+      </style>
+
+      <script>
+            let a;
+            let date;
+            let time;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            setInterval(() => {
+                  a = new Date();
+                  date = a.toLocaleDateString(undefined, options);
+                  time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+                  document.getElementById('time').innerHTML = time + "<br>on " + date;
+            }, 1000);
+      </script>
+</head>
+
+<body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><b class="logo">Readime Clock</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                              <a class="nav-link" href="#">Time Zone <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                              <a class="nav-link" href="#">Toggle</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Continents
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Asia</a>
+                                    <a class="dropdown-item" href="#">Europe</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                              </div>
+                        </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search Place" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+            </div>
+      </nav>
+
+      <div class="container my-4">
+            <div class="jumbotron">
+                  <h1 class="display-4">Current time Is: <span id="time"></span></h1>
+                  <p class="lead">You can own a watch, but you cannot own time.</p>
+                  <hr class="my-4">
+                  <p>Explore the time around the globe.</p>
+                  <a class="btn btn-primary btn-lg" href="#" role="button" id="browse">Browse Times</a>
+            </div>
+      </div>
+</body>
+
+</html>
